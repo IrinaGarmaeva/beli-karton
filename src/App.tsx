@@ -1,8 +1,9 @@
 import Form from "./components/Form"
 const App = () => {
   return (
-    // <div>App</div>
-    <Form />
+    <div className="font-timesNewRoman flex fjustify-center pt-10 w-[728px] mx-auto">
+      <Form />
+    </div>
   )
 }
 

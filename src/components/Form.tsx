@@ -1,184 +1,198 @@
-import React, { useState } from "react";
+import { FC } from "react";
 
-interface FormData {
-  surname: string;
-  name: string;
-  dateOfBirth: string;
-  sex: string;
-  placeOfBirth: string;
-  countryOfBirth: string;
-  nationality: string;
-  travelDocument: string;
-  visaNumber: string;
-  dateOfEntry: string;
-  placeOfStay: string;
-  hostName: string;
-  taxIdNumber: string;
-  registrationDate: string;
-}
-
-const Form: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    surname: "",
-    name: "",
-    dateOfBirth: "",
-    sex: "",
-    placeOfBirth: "",
-    countryOfBirth: "",
-    nationality: "",
-    travelDocument: "",
-    visaNumber: "",
-    dateOfEntry: "",
-    placeOfStay: "",
-    hostName: "",
-    taxIdNumber: "",
-    registrationDate: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+const Form: FC = () => {
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
-    <div className="flex justify-center w-3/4 p-10">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <label className="flex gap-3">
-          Surname:
-          <input
-            type="text"
-            name="surname"
-            value={formData.surname}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Date of Birth:
-          <input
-            type="date"
-            name="dateOfBirth"
-            value={formData.dateOfBirth}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Sex:
-          <input
-            type="text"
-            name="sex"
-            value={formData.sex}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Place of Birth:
-          <input
-            type="text"
-            name="placeOfBirth"
-            value={formData.placeOfBirth}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Country of Birth:
-          <input
-            type="text"
-            name="countryOfBirth"
-            value={formData.countryOfBirth}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Nationality:
-          <input
-            type="text"
-            name="nationality"
-            value={formData.nationality}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Type and number of travel document or other ID:
-          <input
-            type="text"
-            name="travelDocument"
-            value={formData.travelDocument}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Type and number of visa and place of issuance:
-          <input
-            type="text"
-            name="visaNumber"
-            value={formData.visaNumber}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Date of entry into the Republic of Serbia:
-          <input
-            type="date"
-            name="dateOfEntry"
-            value={formData.dateOfEntry}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Address of place of stay in the Republic of Serbia:
-          <input
-            type="text"
-            name="placeOfStay"
-            value={formData.placeOfStay}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Surname, given name and personal identification number of the
-          landlord/host:
-          <input
-            type="text"
-            name="hostName"
-            value={formData.hostName}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Tax ID Number:
-          <input
-            type="text"
-            name="taxIdNumber"
-            value={formData.taxIdNumber}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Date of Registration:
-          <input
-            type="date"
-            name="registrationDate"
-            value={formData.registrationDate}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="flex flex-col justify-center text-xxs w-full">
+      <p className="text-right">Образац 1.</p>
+      <div className="flex flex-col justify-center p-2 border border-1 border-black border-dotted w-full">
+        <div className="flex justify-center relative">
+          <p className="uppercase text-center">ПРИЈАВА БОРАВИШТА СТРАНЦА</p>
+          <p className="absolute right-7">Серијски број/Serial number:</p>
+        </div>
+        <p className="uppercase text-center">REGISTRATION OF PLACE OF STAY</p>
+        <form className="rounded shadow-md">
+          <table className="min-w-full border border-1 border-black">
+            <tbody>
+              <tr className="w-full border border-b-1 border-black">
+                <td className="p-2 w-1/5 border border-r-1 border-black">
+                  <label>Презиме - Surname</label>
+                </td>
+                <td className="p-2 w-4/5">
+                  <input
+                    type="text"
+                    name="surname"
+                    className="p-2 w-full"
+                    placeholder="Введите ФАМИЛИЮ как в загранпаспорте"
+                  />
+                </td>
+              </tr>
+              <tr className="w-full">
+                <td className="p-2 w-1/5 border border-r-1 border-black">
+                  <label>Име - Name</label>
+                </td>
+                <td className="p-2 w-4/5">
+                  <input
+                    type="text"
+                    name="name"
+                    className="p-2 w-full"
+                    placeholder="Введите ИМЯ как в загранпаспорте"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table className="min-w-full border border-1 border-black">
+            <tbody>
+              <tr className="border border-r-1 border-black">
+                <td className="p-2 w-2/5 border border-r-1 border-black">
+                  <label>Датум рођења Date of Birth</label>
+                </td>
+                <td className="p-2 w-3/5">
+                  <input
+                    type="date"
+                    name="dateOfBirth"
+                    className="p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Пол (Sex):</label>
+                </td>
+                <td className="p-2">
+                  <input type="text" name="sex" className="border p-2 w-full" />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>
+                    Место и држава рођења (Place and Country of Birth):
+                  </label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="birthPlace"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Држављанство (Nationality):</label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="nationality"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>
+                    Врста и број путне исправе (Type and Number of Travel
+                    Document):
+                  </label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="travelDocument"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Врста и број визе (Type and Number of Visa):</label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="visa"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>
+                    Датум и место уласка у Србију (Date and Place of Entry to
+                    Serbia):
+                  </label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="entryDatePlace"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Адреса боравишта (Address of Place of Stay):</label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="address"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Податак о станодавцу (Landlord Information):</label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="text"
+                    name="landlordInfo"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Датум пријаве (Date of Registration):</label>
+                </td>
+                <td className="p-2">
+                  <input
+                    type="date"
+                    name="registrationDate"
+                    className="border p-2 w-full"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <label>Напомена (Note):</label>
+                </td>
+                <td className="p-2">
+                  <textarea
+                    name="note"
+                    className="border p-2 w-full"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            type="button"
+            onClick={handlePrint}
+            className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+          >
+            Print Form
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

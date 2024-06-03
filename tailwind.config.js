@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     fontSize: {
-      'xxs': '8px'
+      xxs: '8px',
+      xs: ['12px', '16px'],
+      sm: ['14px', '20px'],
+      base: ['16px', '19.5px'],
     },
     extend: {
       fontFamily: {

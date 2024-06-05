@@ -1,4 +1,4 @@
-import PrinterIcon from "../assets/icons/icon-printer.png";
+import { PiPrinterThin } from "react-icons/pi";
 
 const Header = () => {
   const handlePrint = () => {
@@ -20,7 +20,7 @@ const Header = () => {
         onClick={handlePrint}
         className="mt-2 flex flex-col justify-center items-center"
       >
-        <img src={PrinterIcon} alt="Иконка печати документа" className="w-5" />
+        <PiPrinterThin size={30}/>
         <p className="mt-2 text-xs">Напечатать форму</p>
       </button>
     </div>

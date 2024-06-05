@@ -29,7 +29,7 @@ const Form = () => {
           <p className="uppercase text-center pb-1">
             REGISTRATION OF PLACE OF STAY
           </p>
-          <form className="rounded shadow-md">
+          <form className="rounded">
             <table className="min-w-full border border-1 border-gray-700">
               <tbody>
                 <tr className="w-full border border-gray-700">
@@ -163,7 +163,7 @@ const Form = () => {
                   <td className="p-2 border border-gray-700">
                     <textarea
                       name="visa"
-                      className="px-1 w-full text-sm h-12 overflow-hidden resize-none"
+                      className="px-1 w-full text-sm h-8 overflow-hidden resize-none"
                     ></textarea>
                   </td>
                 </tr>
@@ -276,7 +276,7 @@ const Form = () => {
                   <td className="p-2 border border-gray-700">
                     <textarea
                       name="note"
-                      className="p-1 w-full h-20"
+                      className="p-1 w-full h-14"
                     ></textarea>
                   </td>
                 </tr>
@@ -295,7 +295,7 @@ const Form = () => {
                   <td className="p-2 border border-gray-700"></td>
                   <td className="p-2 border border-gray-700">
                     <div className="flex flex-col items-center">
-                      <p className="pt-8 w-full text-center">
+                      <p className="pt-6 w-full text-center">
                         ________________________________________
                       </p>
                       <span>

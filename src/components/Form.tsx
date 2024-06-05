@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
-
+import { borderPoints } from "../utils/constants";
 
 const Form = () => {
   const [registrationDate, setRegistrationDate] = useState<string>("");
@@ -186,20 +186,16 @@ const Form = () => {
                     className="p-1 w-4/5 text-sm print:border-none"
                     required
                   >
-                    <option value="" disabled selected>
-                      Выберите пограничный пункт
-                    </option>
-                    <option value="Sremska Rača">Sremska Rača</option>
-                    <option value="Beograd">Beograd</option>
-                    <option value="Bačka Palanka">Bačka Palanka</option>
-                    <option value="Bajina Basta">Bajina Basta</option>
-                    <option value="Brodarevo">Brodarevo</option>
-                    <option value="Gostun">Gostun</option>
-                    <option value="Kotroman">Kotroman</option>
-                    <option value="Ljubovija">Ljubovija</option>
-                    <option value="Јамеna">Јамеna</option>
-                    <option value="Uvac">Uvac</option>
-                    <option value="Subotica">Subotica</option>
+                    {borderPoints.map(option => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        disabled={option.disabled}
+                        selected={option.selected}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
                   </select>
                 </td>
               </tr>

@@ -4,7 +4,7 @@ const Header = () => {
   const handlePrint = () => {
     window.print();
   };
-  
+
   return (
     <div className="flex flex-col justify-center items-center print:hidden">
       <h1 className="text-sm text-center">

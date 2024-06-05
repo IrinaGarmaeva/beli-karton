@@ -18,3 +18,11 @@ ul, ol {
   margin: 0;
   padding: 0;
 }
+
+@media print {
+  select {
+    @apply appearance-none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}

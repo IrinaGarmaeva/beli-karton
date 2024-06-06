@@ -40,7 +40,7 @@ const Form = () => {
                     <input
                       type="text"
                       name="surname"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm bg-white placeholder-red-500"
                       placeholder="Введите ФАМИЛИЮ как в загранпаспорте"
                       required
                     />
@@ -54,7 +54,7 @@ const Form = () => {
                     <input
                       type="text"
                       name="name"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       placeholder="Введите ИМЯ как в загранпаспорте"
                       required
                     />
@@ -76,7 +76,7 @@ const Form = () => {
                     <input
                       type="date"
                       name="dateOfBirth"
-                      className="p-1 text-sm"
+                      className="p-1 text-sm cursor-pointer bg-transparent"
                       required
                     />
                   </td>
@@ -91,14 +91,18 @@ const Form = () => {
                   <td className="p-2 border border-gray-700">
                     <select
                       name="sex"
-                      className="p-1 text-sm print:border-none"
+                      className="p-1 text-sm print:border-none cursor-pointer bg-transparent"
                       required
                     >
                       <option value="" disabled selected>
                         Выберите пол
                       </option>
-                      <option value="Muški">Muški</option>
-                      <option value="Ženski">Ženski</option>
+                      <option className="bg-transparent" value="Muški">
+                        Muški
+                      </option>
+                      <option className="bg-transparent" value="Ženski">
+                        Ženski
+                      </option>
                     </select>
                   </td>
                 </tr>
@@ -113,7 +117,7 @@ const Form = () => {
                     <input
                       type="text"
                       name="birthPlace"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       defaultValue="Russia"
                       placeholder="Введите страну рождения как в загранпаспорте"
                       required
@@ -131,7 +135,7 @@ const Form = () => {
                     <input
                       type="text"
                       name="nationality"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       defaultValue="Russian"
                       placeholder="Введите гражданство"
                     />
@@ -148,7 +152,7 @@ const Form = () => {
                     <input
                       type="text"
                       name="travelDocument"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       placeholder="Введите номер загранпаспорта"
                     />
                   </td>
@@ -175,29 +179,31 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <input
-                      type="date"
-                      className="p-1 text-sm"
-                      value={registrationDate}
-                      onChange={(e) => setRegistrationDate(e.target.value)}
-                      required
-                    />
-                    <select
-                      name="borderPoint"
-                      className="p-1 w-4/5 text-sm print:border-none"
-                      required
-                    >
-                      {borderPoints.map((option) => (
-                        <option
-                          key={option.value}
-                          value={option.value}
-                          disabled={option.disabled}
-                          selected={option.selected}
-                        >
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="flex">
+                      <input
+                        type="date"
+                        className="p-1 text-sm cursor-pointer bg-transparent"
+                        value={registrationDate}
+                        onChange={(e) => setRegistrationDate(e.target.value)}
+                        required
+                      />
+                      <select
+                        name="borderPoint"
+                        className="p-1 w-4/5 text-sm print:border-none cursor-pointer bg-transparent"
+                        required
+                      >
+                        {borderPoints.map((option) => (
+                          <option
+                            key={option.value}
+                            value={option.value}
+                            disabled={option.disabled}
+                            selected={option.selected}
+                          >
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -212,7 +218,7 @@ const Form = () => {
                   <td className="p-2 border border-gray-700">
                     <textarea
                       name="address"
-                      className="px-1 w-full text-sm h-14 overflow-hidden resize-none"
+                      className="px-1 w-full text-sm h-14 overflow-hidden resize-none placeholder-red-500"
                       placeholder="Введите адрес регистрации в Сербии"
                     ></textarea>
                   </td>
@@ -235,14 +241,14 @@ const Form = () => {
                     <input
                       type="text"
                       name="landlordName"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       placeholder="Введите фамилию и имя арендодателя"
                       required
                     />
                     <input
                       type="text"
                       name="landlordInfo"
-                      className="p-1 w-full text-sm"
+                      className="p-1 w-full text-sm placeholder-red-500"
                       placeholder="Введите номер ID-карты арендодателя,пример JMBG0123456789012"
                       required
                     />
@@ -259,7 +265,7 @@ const Form = () => {
                     <input
                       type="date"
                       name="registrationDate"
-                      className="p-1 text-sm"
+                      className="p-1 text-sm cursor-pointer bg-transparent"
                       value={registrationDate}
                       onChange={(e) => setRegistrationDate(e.target.value)}
                       required
@@ -310,8 +316,7 @@ const Form = () => {
           </form>
         </div>
       </div>
-      <div className="flex justify-center mt-4 print:hidden">
-      </div>
+      <div className="flex justify-center mt-4 print:hidden"></div>
     </div>
   );
 };

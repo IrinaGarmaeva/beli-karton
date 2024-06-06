@@ -12,6 +12,12 @@ export default {
       base: ['16px', '19.5px'],
     },
     extend: {
+      display: ['print'],
+      borderWidth: ['print'],
+      textColor: ['print'],
+      padding: ['print'],
+      margin: ['print'],
+      backgroundColor: ['print'],
       fontFamily: {
         timesNewRoman: ['Times New Roman', 'sans-serif'],
       },

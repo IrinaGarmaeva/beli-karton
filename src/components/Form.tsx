@@ -73,12 +73,17 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 w-3/5 border border-gray-700">
-                    <input
-                      type="date"
-                      name="dateOfBirth"
-                      className="p-1 text-sm cursor-pointer bg-transparent"
-                      required
-                    />
+                    <div className="flex items-center gap-4">
+                      <input
+                        type="date"
+                        name="dateOfBirth"
+                        className="p-1 text-sm cursor-pointer bg-transparent"
+                        required
+                      />
+                      <p className="text-sm text-red-500 print:hidden">
+                        Введите дату рождения
+                      </p>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -262,14 +267,20 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <input
-                      type="date"
-                      name="registrationDate"
-                      className="p-1 text-sm cursor-pointer bg-transparent"
-                      value={registrationDate}
-                      onChange={(e) => setRegistrationDate(e.target.value)}
-                      required
-                    />
+                    <div className="flex items-center gap-4">
+                      <input
+                        type="date"
+                        name="registrationDate"
+                        className="p-1 text-sm cursor-pointer bg-transparent"
+                        value={registrationDate}
+                        onChange={(e) => setRegistrationDate(e.target.value)}
+                        required
+                      />
+                      <div className="text-sm text-red-500 print:hidden flex flex-col">
+                        <p>Укажите дату регистрации</p>
+                        <span >Автоматически стоит текущая дата</span>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">

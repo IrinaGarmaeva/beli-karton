@@ -1,4 +1,5 @@
 import { PiPrinterThin } from "react-icons/pi";
+import CharacterTable from "./CharacterTable";
 
 const Header = () => {
   const handlePrint = () => {
@@ -15,12 +16,13 @@ const Header = () => {
         Форма не собирает персональные данные и не хранит их. Cookies не
         используются
       </p>
+      <CharacterTable />
       <button
         type="button"
         onClick={handlePrint}
         className="mt-2 flex flex-col justify-center items-center"
       >
-        <PiPrinterThin size={30}/>
+        <PiPrinterThin size={30} />
         <p className="mt-2 text-xs">Напечатать форму</p>
       </button>
     </div>

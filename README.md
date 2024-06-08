@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
+# Foreign citizen residence registration form in Serbia (Beli karton)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a simple web application designed to simplify the process of filling out the "Foreign Citizen Residence Registration" form in Serbia, commonly known as "Beli Karton". Users can fill in the necessary details online, print the form, or save it to send for printing. The application does not collect or store any personal information, ensuring user privacy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Features](#features)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Fill out the registration form online.
+- Automatically set today's date for relevant form fields.
+- Provide a list of places of entry in Serbia for easy selection.
+- Print the completed form directly from the application.
+- Save the form for printing later.
+- No data collection or storage, ensuring user privacy.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Technologies
+
+- React
+- Tailwind CSS
+
+## Screenshots
+
+<b>Home Page</b>
+<img src="./src/assets/images/form.png">
+
+## Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/IrinaGarmaeva/beli-karton.git
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    This will start the application on `http://localhost:5173`.
+
+4. **Build app (production):**
+
+    ```bash
+    npm run build
+    ```
+
+## Contributing
+
+If you have any suggestions or improvements, feel free to open an issue or create a pull request.

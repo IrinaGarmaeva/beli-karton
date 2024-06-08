@@ -29,8 +29,9 @@ const CharacterTable = () => {
   };
 
   return (
-    <div className="mt-2 flex flex-col text-sm justify-center overflow-x-auto">
+    <div className="mt-3 flex flex-col text-sm justify-center overflow-x-auto">
       <h2 className="font-semibold text-center">Буквы сербской латиницы</h2>
+      <p>По клику на ячейку буква автоматически копируется</p>
       <table className="mt-2 min-w-full border border-gray-400">
         <tbody>
           <tr className="border-b">

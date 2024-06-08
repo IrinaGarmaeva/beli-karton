@@ -14,8 +14,9 @@ const Header = () => {
       </h1>
       <p className="text-xs text-center">
         Форма не собирает персональные данные и не хранит их. Cookies не
-        используются
+        используются.
       </p>
+      <p className="text-xs mt-1">Эта шапка не печатается!</p>
       <CharacterTable />
       <button
         type="button"

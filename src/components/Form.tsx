@@ -94,21 +94,23 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <select
-                      name="sex"
-                      className="p-1 text-sm print:border-none cursor-pointer bg-transparent"
-                      required
-                    >
-                      <option value="" disabled selected>
+                    <div className="flex items-center gap-4">
+                      <select
+                        name="sex"
+                        className="p-1 text-sm print:border-none cursor-pointer bg-transparent"
+                        required
+                      >
+                        <option className="bg-transparent" value="Muški">
+                          Muški
+                        </option>
+                        <option className="bg-transparent" value="Ženski">
+                          Ženski
+                        </option>
+                      </select>
+                      <p className="text-sm text-red-500 print:hidden">
                         Выберите пол
-                      </option>
-                      <option className="bg-transparent" value="Muški">
-                        Muški
-                      </option>
-                      <option className="bg-transparent" value="Ženski">
-                        Ženski
-                      </option>
-                    </select>
+                      </p>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -119,14 +121,18 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <input
-                      type="text"
-                      name="birthPlace"
-                      className="p-1 w-full text-sm placeholder-red-500"
-                      defaultValue="Russia"
-                      placeholder="Введите страну рождения как в загранпаспорте"
-                      required
-                    />
+                    <div className="flex items-center">
+                      <input
+                        type="text"
+                        name="birthPlace"
+                        className="p-1 w-full text-sm placeholder-red-500"
+                        defaultValue="Russia"
+                        required
+                      />
+                      <p className="text-sm text-red-500 print:hidden text-center">
+                        Укажите место рождения как в загранпаспорте
+                      </p>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -137,13 +143,17 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <input
-                      type="text"
-                      name="nationality"
-                      className="p-1 w-full text-sm placeholder-red-500"
-                      defaultValue="Russian"
-                      placeholder="Введите гражданство"
-                    />
+                    <div className="flex items-center">
+                      <input
+                        type="text"
+                        name="nationality"
+                        className="p-1 w-full text-sm placeholder-red-500"
+                        defaultValue="Russian"
+                      />
+                      <p className="text-sm text-red-500 print:hidden text-center">
+                        Укажите гражданство как в загранпаспорте
+                      </p>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -278,7 +288,7 @@ const Form = () => {
                       />
                       <div className="text-sm text-red-500 print:hidden flex flex-col">
                         <p>Укажите дату регистрации</p>
-                        <span >Автоматически стоит текущая дата</span>
+                        <span>Автоматически стоит текущая дата</span>
                       </div>
                     </div>
                   </td>
@@ -291,10 +301,7 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <textarea
-                      name="note"
-                      className="p-1 w-full h-14"
-                    ></textarea>
+                    <textarea className="p-1 w-full h-8"></textarea>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
@@ -305,14 +312,14 @@ const Form = () => {
                     </div>
                   </td>
                   <td className="p-2 border border-gray-700">
-                    <textarea name="note" className="p-2 w-full"></textarea>
+                    <textarea className="p-2 w-full"></textarea>
                   </td>
                 </tr>
                 <tr className="border border-gray-700">
                   <td className="p-2 border border-gray-700"></td>
                   <td className="p-2 border border-gray-700">
                     <div className="flex flex-col items-center">
-                      <p className="pt-6 w-full text-center">
+                      <p className="pt-5 w-full text-center">
                         ________________________________________
                       </p>
                       <span>

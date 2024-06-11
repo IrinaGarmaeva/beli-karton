@@ -35,8 +35,8 @@ Deploy: [https://beli-karton.vercel.app/](https://beli-karton.vercel.app/)
 
 ## Screenshots
 
-<b>Header</b>
 <img src="./src/assets/images/header.png">
+<b>Header</b>
 <details><summary><b>Show all</b></summary>
 <b>Form</b>
 <img src="./src/assets/images/form.png">
